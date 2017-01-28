@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rai on GPU Teaching Tools</title>
+    <link>https://webgpu.github.io/tags/rai/index.xml</link>
+    <description>Recent content in Rai on GPU Teaching Tools</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2017 Abdul Dakkak</copyright>
+    <atom:link href="/tags/rai/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>RAI Submission System</title>
+      <link>https://webgpu.github.io/project/rai/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://webgpu.github.io/project/rai/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
