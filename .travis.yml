@@ -15,4 +15,4 @@ script:
 - binaries/hugo # generate!
 after_success:
 - cp .travis.yml public
-- bash deploy.sh
+- bash deploy.sh -v
