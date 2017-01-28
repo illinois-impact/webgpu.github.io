@@ -8,7 +8,7 @@ git config --global user.email "dakkak@illinois.edu"
 git config --global user.name "Abdul Dakkak"
 
 # Build the project.
-hugo -t <theme_name> # if using a theme, replace by 'hugo -t <yourtheme>'
+hugo -t academic # if using a theme, replace by 'hugo -t <yourtheme>'
 
 git clone "https://$GH_REPO"
 # clean up repo
