@@ -1,18 +1,20 @@
 language: go
 sudo: required
-git:
-  submodules: true
-branches:
-  except:
-  - master
-install:
-- go get -v github.com/spf13/hugo
-script:
-- ls -l
-- bash ./deploy.sh
-notifications:
-  email:
-    on_failure: always
 env:
   global:
-    secure: d5bvr6DfZwqwepSFQ+DlXUkZushrJW0i5BO+DU5VvbdAruZzyTC9Q8+954tSj9N2dczdQTGYCISQlnbCRiVqAbmyg79Qs4mUSKEoa9GFwmZq2KfjJrTNk8nyfywClMkt9xPOCMcUmR3iJ096eShQ16DYz/nxzX1pliFyQQC4MB7Op9pvwHSm28z7bWqseJrI8bf9y2uHJF6Cgaa/eMQrbDq3ilwd4f9zMxo12xfjRC+i6ZUmG7hOKItwCXZ1z4T44uqFD/LhG4KklC+SO8sWoguy7u3XJJuKFFGc7xWapC0m6EEfHZxQ+HCC0xB7HkTevIXqaMBkxsm1qvIEXGZ+hceN6qWefiY3POlKBRAkvQjC+fPzzpkkxgeq89TCdwR1uzd+c7Z6OrMwXkvXRKIIZSJSTHUkhUKkxZ+WVOG+p97Y7fvsjwukATN9B5DAdZcRw3zBSSnlyrHj8VI+Lnr2y9m5Z6ueVruOIFUv+OJMhzWA1RvAKmOVRbuHWO/+gJYY8NiMMkB7XxacTqFP+i4MzS+HZlyOoakmE18g9A9EWRkFd+yBqW+NSqjMWIQmFu4f2Itvj5YwQ5dNmfhAKdHPBAQ8BvhUosDs0YLCPmEbvi8zCTYWwUjGQFDzZw+NjuaQLBaTbOpqG8SVTUO7UErOzR8KoK99WdROJJVkvAu4g5U=
+    - GIT_DEPLOY_DIR=public
+    - GIT_DEPLOY_BRANCH=master
+    - GIT_DEPLOY_USERNAME="Abdul Dakkak"
+    - GIT_DEPLOY_EMAIL=dakkak@illinois.edu
+    - secure: d5bvr6DfZwqwepSFQ+DlXUkZushrJW0i5BO+DU5VvbdAruZzyTC9Q8+954tSj9N2dczdQTGYCISQlnbCRiVqAbmyg79Qs4mUSKEoa9GFwmZq2KfjJrTNk8nyfywClMkt9xPOCMcUmR3iJ096eShQ16DYz/nxzX1pliFyQQC4MB7Op9pvwHSm28z7bWqseJrI8bf9y2uHJF6Cgaa/eMQrbDq3ilwd4f9zMxo12xfjRC+i6ZUmG7hOKItwCXZ1z4T44uqFD/LhG4KklC+SO8sWoguy7u3XJJuKFFGc7xWapC0m6EEfHZxQ+HCC0xB7HkTevIXqaMBkxsm1qvIEXGZ+hceN6qWefiY3POlKBRAkvQjC+fPzzpkkxgeq89TCdwR1uzd+c7Z6OrMwXkvXRKIIZSJSTHUkhUKkxZ+WVOG+p97Y7fvsjwukATN9B5DAdZcRw3zBSSnlyrHj8VI+Lnr2y9m5Z6ueVruOIFUv+OJMhzWA1RvAKmOVRbuHWO/+gJYY8NiMMkB7XxacTqFP+i4MzS+HZlyOoakmE18g9A9EWRkFd+yBqW+NSqjMWIQmFu4f2Itvj5YwQ5dNmfhAKdHPBAQ8BvhUosDs0YLCPmEbvi8zCTYWwUjGQFDzZw+NjuaQLBaTbOpqG8SVTUO7UErOzR8KoK99WdROJJVkvAu4g5U=
+branches:
+  only:
+    - sources
+install:
+  - go get -v github.com/spf13/hugo
+  - rm -rf public || exit 0
+script:
+  - hugo -t academic
+after_success:
+  - cp .travis.yml public
+  - bash deploy.sh
