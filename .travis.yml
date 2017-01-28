@@ -2,6 +2,9 @@ language: go
 sudo: required
 git:
   submodules: true
+branches:
+  only:
+  - gh-pages
 install:
 - go get -v github.com/spf13/hugo
 script: bash ./deploy.sh
