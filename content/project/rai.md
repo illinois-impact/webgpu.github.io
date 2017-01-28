@@ -9,14 +9,14 @@ title = "RAI Submission System"
 summary = "An example of linking directly to an external project website using `external_link`."
 
 # Optional image to display on homepage (relative to `static/img/` folder).
-image_preview = ""
+image_preview = "rai_logo.png"
 
 # Optional image to display on project detail page (relative to `static/img/` folder).
 image = ""
 
 # Tags: can be used for filtering projects.
 # Example: `tags = ["machine-learning", "deep-learning"]`
-tags = ["demo"]
+tags = ["rai"]
 
 # Optional external URL for project (replaces project detail page).
 external_link = "http://example.org"
