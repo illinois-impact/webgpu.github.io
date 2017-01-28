@@ -1,20 +1,18 @@
 language: go
-sudo: required
 env:
   global:
-    - GIT_DEPLOY_DIR=public
-    - GIT_DEPLOY_BRANCH=master
-    - GIT_DEPLOY_USERNAME="Abdul Dakkak"
-    - GIT_DEPLOY_EMAIL=dakkak@illinois.edu
-    - secure: d5bvr6DfZwqwepSFQ+DlXUkZushrJW0i5BO+DU5VvbdAruZzyTC9Q8+954tSj9N2dczdQTGYCISQlnbCRiVqAbmyg79Qs4mUSKEoa9GFwmZq2KfjJrTNk8nyfywClMkt9xPOCMcUmR3iJ096eShQ16DYz/nxzX1pliFyQQC4MB7Op9pvwHSm28z7bWqseJrI8bf9y2uHJF6Cgaa/eMQrbDq3ilwd4f9zMxo12xfjRC+i6ZUmG7hOKItwCXZ1z4T44uqFD/LhG4KklC+SO8sWoguy7u3XJJuKFFGc7xWapC0m6EEfHZxQ+HCC0xB7HkTevIXqaMBkxsm1qvIEXGZ+hceN6qWefiY3POlKBRAkvQjC+fPzzpkkxgeq89TCdwR1uzd+c7Z6OrMwXkvXRKIIZSJSTHUkhUKkxZ+WVOG+p97Y7fvsjwukATN9B5DAdZcRw3zBSSnlyrHj8VI+Lnr2y9m5Z6ueVruOIFUv+OJMhzWA1RvAKmOVRbuHWO/+gJYY8NiMMkB7XxacTqFP+i4MzS+HZlyOoakmE18g9A9EWRkFd+yBqW+NSqjMWIQmFu4f2Itvj5YwQ5dNmfhAKdHPBAQ8BvhUosDs0YLCPmEbvi8zCTYWwUjGQFDzZw+NjuaQLBaTbOpqG8SVTUO7UErOzR8KoK99WdROJJVkvAu4g5U=
+  - GIT_DEPLOY_DIR=public
+  - GIT_DEPLOY_BRANCH=master
+  - GIT_DEPLOY_USERNAME="Abdul Dakkak"
+  - GIT_DEPLOY_EMAIL=dakkak@illinois.edu
+  - secure: "Btzt0cZ4z2mwpd/WPDXn4U+oy9rwdE1SSydinNBcIV8Ybv4iWCrfiJNyPAN/fm3FiBwEcx4yM7jDxaxzMSlCrz3NPv11maHx4EGJLlfyO7upSj4k4OUDTv0YFVXzAjlweJ6sZjhp1sBKhA60qcDqdTu91TtE9K3XLNHgM8cg6u5ieL2QHFGfWuYu+ky3nSgQ38FNPpwVWwJr326m+zKYcXkW2k+MWHh0JzdUvsGKwQx8zVMuEY9PYJBPOGvBBmBVx7C0c/uMtFp4dVxb5lAotr3hDPn91uSFiftquT+rnCWsf4VS2C0aM9Odd7kFSVYVBphaH5w6Ljq7iRFzJ8PyBzVgEJ+WA7etEVRjYVlopjohwOeO9zjTwzjMczMVSPbgisy6LZBbR5a2Wdh4H4L09LSTYG/caswB1ZuJJSmw9hMcsePUSfo0SvSxLIoKPygxPfNIPs3E2FPAa10HsCRKI/uqOEKMdv56ryN0a1i37RpIAxDUc+JWdnSqIpLs5ofs0+Ft5UjitVvkkKaLZeKnz+tVc7qmYJryiaRh3ObNkYGPZ1TU4fKNKf+c9UVVeTZ+5Y4OqCXsJfGcHQXK/mrDShr2zzhuONKjskxNu4yRPQ5Z61+hpcDSq2O0f7rRg1qFt35gpn/XENBI1w9B2L/532d95sC5hly8qmjITVZQoC4="
 branches:
   only:
-    - sources
+  - sources
 install:
-  - go get -v github.com/spf13/hugo
-  - rm -rf public || exit 0
+- rm -rf public || exit 0
 script:
-  - hugo -t academic
+- binaries/hugo -t academic
 after_success:
-  - cp .travis.yml public
-  - bash deploy.sh
+- cp .travis.yml public
+- bash deploy.sh
