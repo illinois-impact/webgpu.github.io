@@ -3,8 +3,8 @@ sudo: required
 git:
   submodules: true
 branches:
-  only:
-  - gh-pages
+  except:
+  - master
 install:
 - go get -v github.com/spf13/hugo
 script: bash ./deploy.sh
