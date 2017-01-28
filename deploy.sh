@@ -10,15 +10,19 @@ git config --global user.name "Abdul Dakkak"
 # Build the project.
 hugo -t academic # if using a theme, replace by 'hugo -t <yourtheme>'
 
+echo "cloning repo $GH_REPO"
 git clone "https://$GH_REPO"
 # clean up repo
+echo "clean up repo"
 cd  ${REPO}
 rm -rf *
 cd ..
 # copy files to commit
+echo "copy files to commit"
 cp -R public/* ${REPO}
 cd ${REPO}
 git remote
 git add -A :/
+echo "committing files"
 git commit -a -m "via travis -- for $MSG"
 git push "https://${GH_TOKEN}@${GH_REPO}" master > /dev/null 2>&1
